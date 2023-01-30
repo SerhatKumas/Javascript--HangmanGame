@@ -15,3 +15,9 @@ body {
 #hangman-pic{
     border-radius: 20px;
 }
+
+#vh30{
+ height: 30vh;
+ background-color: white;
+ border-radius: 30vh;
+}
