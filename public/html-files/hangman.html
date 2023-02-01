@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css-files/hangman.css">
-    <title>Hangman Game</title>
-</head>
-<body onload="initiateGame()">
-    <div class="fluid-container">
-        <div class="row">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap 5 Css cdn link -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <!-- Bootstrap 5 Css cdn link -->
+      <!-- External Css link -->
+      <link rel="stylesheet" href="../css-files/hangman.css">
+      <!-- External Css link -->
+      <title>Hangman Game</title>
+   </head>
+   <!-- Game initializer method trigger -->
+   <body onload="initiateGame()">
+      <div class="fluid-container">
+         <div class="row">
             <div class="row m-4">
-                <div class="col-2">
-                </div>
-                <div class="col-2">
-                    <a href="../../index.html"><button type="button" class="btn btn-danger mt-3">Back to Main Menu</button></a>
-                </div>
-                <div class="col-2">
-                    <button type="button" onclick="resetGame()" id="reset-btn" class="btn btn-danger mt-3">Reset Game</button>
-                </div>
-                <div class="col-4 text-center">
-                    <h1 class="text-danger">Hangman Game</h1>
-                </div>
-                <div class="col-2">
-                </div>
+               <div class="col-2">
+               </div>
+               <div class="col-2">
+                  <!-- Main menu button -->
+                  <a href="../../index.html"><button type="button" class="btn btn-danger mt-3">Back to Main Menu</button></a>
+                  <!-- Main menu button -->
+               </div>
+               <div class="col-2">
+                  <!-- Reset game button -->
+                  <button type="button" onclick="resetGame()" id="reset-btn" class="btn btn-danger mt-3">Reset Game</button>
+                  <!-- Reset game button -->
+               </div>
+               <div class="col-4 text-center">
+                  <h1 class="text-danger">Hangman Game</h1>
+               </div>
+               <div class="col-2">
+               </div>
             </div>
             <div class="row align-content-center justify-content-center" id="centerized-div">
                <div class="col-4 text-center" id="hangman-plot">
-                <img src="../game-status-images/0.jpg" alt="game-status" id="hangman-pic">
+                  <!-- Hangman image area -->
+                  <img src="../game-status-images/0.jpg" alt="game-status" id="hangman-pic">
+                  <!-- Hangman image area -->
                </div>
                <div class="col-8 text-center align-content-center">
-                    <div class="row align-content-center" id="vh30">
-                        <div class="row" id="word-explanation">
-
+                  <div class="row align-content-center" id="vh30">
+                     <div class="row" id="word-explanation">
+                     </div>
+                     <div class="row justify-content-center" id="game-plot">
+                     </div>
+                  </div>
+                  <div class="row pt-5 justify-content-center">
+                     <div class="col-4 mt-5 justify-content-center">
+                        <div class="input-group input-group-lg">
+                           <span class="input-group-text" id="inputGroup-sizing-lg">Your Letter Guess</span>
+                           <!-- User guess text area -->
+                           <input type="text" id="letter-guess" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                           <!-- User guess text area -->
                         </div>
-                        <div class="row justify-content-center" id="game-plot">
-
-                        </div>
-                    </div>
-                    <div class="row pt-5 justify-content-center">
-                        <div class="col-4 mt-5 justify-content-center">
-                            <div class="input-group input-group-lg">
-                                <span class="input-group-text" id="inputGroup-sizing-lg">Your Letter Guess</span>
-                                <input type="text" id="letter-guess" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                            </div>
-                            <button onclick="guessLetter()" type="button" id="try-btn" class="btn btn-danger mt-3">Try A Letter</button>
-                        </div>
-                    </div>
+                        <!-- User guess execution button -->
+                        <button onclick="guessLetter()" type="button" id="try-btn" class="btn btn-danger mt-3">Try A Letter</button>
+                        <!-- User guess execution button -->
+                     </div>
+                  </div>
                </div>
             </div>
-        </div>
-    </div>
-    <script src="../../src/game_controller.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
+         </div>
+      </div>
+      <!-- External css link -->
+      <script src="../../src/game_controller.js"></script>
+      <!-- External css link -->
+      <!-- Bootstrap 5 Js cdn link -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      <!-- Bootstrap 5 Js cdn link -->
+   </body>
 </html>

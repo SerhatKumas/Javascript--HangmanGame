@@ -1,28 +1,33 @@
+/* Hangman Page Css File */
+
+/* Google Fonts import link */
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-body {
-	height: 100vh;
-	width: 100vw;
-	background-color: black;
-	font-family: 'Mina', sans-serif;
-	overflow: hidden;
-	font-family: 'Itim', cursive;
+ body {
+     height: 100vh;
+     width: 100vw;
+     background-color: black;
+     font-family: 'Mina', sans-serif;
+     overflow: hidden;
+     font-family: 'Itim', cursive;
+}
+ #centerized-div {
+     min-height: 100vh 
 }
 
-#centerized-div {
-	min-height: 100vh
+/* Hangman picture area shaping */
+ #hangman-pic{
+     border-radius: 20px;
 }
 
-#hangman-pic{
-    border-radius: 20px;
+/* Word guessing area shaping */
+ #vh30{
+     height: 30vh;
+     background-color: white;
+     border-radius: 30vh;
 }
 
-#vh30{
- height: 30vh;
- background-color: white;
- border-radius: 30vh;
-}
-
-.letters{
-	font-weight: bolder;
-	font-size: xx-large;
+/* Word guess letters sizing */
+ .letters{
+     font-weight: bolder;
+     font-size: xx-large;
 }
