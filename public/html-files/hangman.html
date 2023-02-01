@@ -17,8 +17,13 @@
                 <div class="col-2">
                     <a href="../../index.html"><button type="button" class="btn btn-danger mt-3">Back to Main Menu</button></a>
                 </div>
-                <div class="col-8 text-center">
+                <div class="col-2">
+                    <button type="button" onclick="resetGame()" id="reset-btn" class="btn btn-danger mt-3">Reset Game</button>
+                </div>
+                <div class="col-4 text-center">
                     <h1 class="text-danger">Hangman Game</h1>
+                </div>
+                <div class="col-2">
                 </div>
             </div>
             <div class="row align-content-center justify-content-center" id="centerized-div">
@@ -26,7 +31,7 @@
                 <img src="../game-status-images/0.jpg" alt="game-status" id="hangman-pic">
                </div>
                <div class="col-8 text-center align-content-center">
-                    <div class="row align-content-center vh30">
+                    <div class="row align-content-center" id="vh30">
                         <div class="row" id="word-explanation">
 
                         </div>
@@ -40,7 +45,7 @@
                                 <span class="input-group-text" id="inputGroup-sizing-lg">Your Letter Guess</span>
                                 <input type="text" id="letter-guess" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
                             </div>
-                            <button onclick="guessLetter()" type="button" class="btn btn-danger mt-3">Try A Letter</button>
+                            <button onclick="guessLetter()" type="button" id="try-btn" class="btn btn-danger mt-3">Try A Letter</button>
                         </div>
                     </div>
                </div>
