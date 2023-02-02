@@ -5,35 +5,35 @@ let guess_count = 0;
 let game_winner_count = 0;
 
 // Random number for guess selection
-let randomNumber = 0;
+let random_number = 0;
 
 // Hangman words array -> can be added more and more words
-word = ["car", "bus", "ferry", "train", "metro"];
+game_words = ["car", "bus", "ferry", "train", "metro"];
 
 // Hangman words explanation array -> can be added more and more but it has to be with same index of its word
-word_explanation = ["special transportation vehicle", "public transportation vehicle", "public transportation used in sea", "public transportation used between cities", "public transportation used in city"];
+game_words_explanation = ["special transportation vehicle", "public transportation vehicle", "public transportation used in sea", "public transportation used between cities", "public transportation used in city"];
 
 // Game initializing method that is revoked everytime game window is loaded and its called
-function initiateGame() {
+function gameInitializer() {
    // Reset bar is disabled in the beginning of the game
    document.getElementById("reset-btn").disabled = true;
    // Getting random number for hangman word selection
-   randomNumber = getRandomInt(word.length);
+   random_number = getRandomInt(game_words.length);
 
    // Creation of pragraph for putting explanation of word in it
-   let p = document.createElement("p");
-   p.innerHTML = word_explanation[randomNumber].toUpperCase();
-   p.id = "explanation"
-   document.getElementById("word-explanation").appendChild(p);
+   let word_explanation_p = document.createElement("p");
+   word_explanation_p.innerHTML = game_words_explanation[random_number].toUpperCase();
+   word_explanation_p.id = "explanation"
+   document.getElementById("word-explanation").appendChild(word_explanation_p);
    // Creation of pragraph for putting explanation of word in it
 
    // Creating blank spaces ( _ ) equal to number of letter in word
-   for (let i = 0; i < word[randomNumber].length; i++) {
-      let letterDiv = document.createElement('div');
-      letterDiv.innerHTML = " _ ";
-      letterDiv.setAttribute("class", "col-1 letters");
-      letterDiv.setAttribute("id", "letter-" + i);
-      document.getElementById("game-plot").appendChild(letterDiv);
+   for (let i = 0; i < game_words[random_number].length; i++) {
+      let letter_div = document.createElement('div');
+      letter_div.innerHTML = " _ ";
+      letter_div.setAttribute("class", "col-1 letters");
+      letter_div.setAttribute("id", "letter-" + i);
+      document.getElementById("game-plot").appendChild(letter_div);
    }
 }
 
@@ -49,7 +49,7 @@ function guessLetter() {
 // Placing the letter guess of user, in blank space ( _ )
 function placeTheLetters(guess) {
    // Checking whether word contains user guess letter or not
-   if (word[randomNumber].split('').indexOf(guess) > -1) {
+   if (game_words[random_number].split('').indexOf(guess) > -1) {
       // Taking letter positions in a word, it can return more than one position
       let letter_array = letterPlaceFinder(guess);
       // Placing all the guess letters in a word
@@ -74,7 +74,7 @@ function checkGameStatus() {
    // Due to having 10 steps of hangman, as long as wrong guess counter less than 10 we will be able to win the game
    if (guess_count < 10) {
       // Besides having wrong number counter less than 10, we have to guess all letters right
-      if (game_winner_count == word[randomNumber].length) {
+      if (game_winner_count == game_words[random_number].length) {
          // If we won the game, letter placement div will turn into green
          document.getElementById("vh30").style.backgroundColor = "green";
          // Freezing buttons that are used for guessing letter and revoking reset button
@@ -96,7 +96,7 @@ function checkGameStatus() {
       // H1 tag creation for game lose announcement
       let h1 = document.createElement("h1");
       h1.setAttribute("id", "game-result");
-      h1.innerHTML = "Sorry, you lost the game, the word was '" + word[randomNumber].toUpperCase() + "'"
+      h1.innerHTML = "Sorry, you lost the game, the word was '" + game_words[random_number].toUpperCase() + "'"
       document.getElementById("word-explanation").appendChild(h1);
       // H1 tag creation for game lose announcement
    }
@@ -143,24 +143,24 @@ function resetGame() {
    // All counter reseting
    guess_count = 0;
    game_winner_count = 0;
-   randomNumber = 0;
+   random_number = 0;
    // All counter reseting
    // Creation of the new game
-   initiateGame();
+   gameInitializer();
 }
 
 //Method that returns places of letter guesses in a word
 function letterPlaceFinder(guess) {
-   let number_counter = []
+   let letter_places = []
    // Spliting word into array
-   let word_array = word[randomNumber].split("");
+   let word_array = game_words[random_number].split("");
    // Comparision of the array elements of with guess
    for (let i = 0; i < word_array.length; i++) {
       if (word_array[i] == guess) {
-         number_counter.push(i)
+         letter_places.push(i)
       }
    }
-   return number_counter
+   return letter_places
 }
 
 // Getting random number for word selection
