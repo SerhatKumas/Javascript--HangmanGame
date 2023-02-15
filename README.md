@@ -1,7 +1,7 @@
 # Javascript--HangmanGame
 
 - It is a basic hangman game
-- Random number is created for seleection of word from the array
+- Random number is created for selection of word from the array
 - Word and its explanation is chosen from the word and explanation array
 - Every number of user guess is recorded both right and wrong ones
 - If wrong guess number is more than 10, player loses game
